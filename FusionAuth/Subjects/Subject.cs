@@ -34,5 +34,13 @@ namespace FusionAuth.Subjects
         public bool HasProperty(string key, string value) => _properties.Any(p => p.Key == key && p.Value == value);
 
         public IEnumerable<string> GetPropertyValues(string key) => _properties.Where(p => p.Key == key).Select(p => p.Value);
+
+        public override bool Equals(object obj) => obj is Subject subject ? Identifier == subject.Identifier : false;
+
+        public override int GetHashCode() => HashCode.Combine(Identifier);
+
+        public static bool operator ==(Subject left, Subject right) => left.Equals(right);
+
+        public static bool operator !=(Subject left, Subject right) => !left.Equals(right);
     }
 }
