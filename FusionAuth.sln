@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31320.298
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FusionAuth", "FusionAuth\FusionAuth.csproj", "{92C6AAE3-7507-4320-9DEF-5A4B2DF61947}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FusionAuth.Test", "FusionAuth.Test\FusionAuth.Test.csproj", "{8E572A11-932C-4FA2-96BD-0001975C308B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{92C6AAE3-7507-4320-9DEF-5A4B2DF61947}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92C6AAE3-7507-4320-9DEF-5A4B2DF61947}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92C6AAE3-7507-4320-9DEF-5A4B2DF61947}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92C6AAE3-7507-4320-9DEF-5A4B2DF61947}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E572A11-932C-4FA2-96BD-0001975C308B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E572A11-932C-4FA2-96BD-0001975C308B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E572A11-932C-4FA2-96BD-0001975C308B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E572A11-932C-4FA2-96BD-0001975C308B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ED0468C1-1250-43B2-86D8-5B157DBE60A9}
+	EndGlobalSection
+EndGlobal
