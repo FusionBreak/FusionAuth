@@ -9,31 +9,28 @@ namespace FusionAuth.Subjects
     public class Subject
     {
         public string Identifier { get; }
-        public IEnumerable<SubjectPrivilege> Privileges => _privileges;
-        public IEnumerable<SubjectProperty> Properties => _properties;
-
-        private HashSet<SubjectPrivilege> _privileges = new();
-        private HashSet<SubjectProperty> _properties = new();
+        public HashSet<SubjectPrivilege> Privileges { get; init; } = new();
+        public HashSet<SubjectProperty> Properties { get; init; } = new();
 
         public Subject(string identifier) => Identifier = identifier;
 
-        public bool AddPrivilege(SubjectPrivilege privilege) => _privileges.Add(privilege);
+        public bool AddPrivilege(SubjectPrivilege privilege) => Privileges.Add(privilege);
 
         public bool AddPrivilege(string name) => AddPrivilege(new SubjectPrivilege(name));
 
-        public bool RemovePrivilege(string name) => _privileges.RemoveWhere(p => p.Name == name) > 0;
+        public bool RemovePrivilege(string name) => Privileges.RemoveWhere(p => p.Name == name) > 0;
 
-        public bool HasPrivilege(string name) => _privileges.Any(p => p.Name == name);
+        public bool HasPrivilege(string name) => Privileges.Any(p => p.Name == name);
 
-        public bool AddProperty(SubjectProperty property) => _properties.Add(property);
+        public bool AddProperty(SubjectProperty property) => Properties.Add(property);
 
-        public bool RemoveProperty(string key, string value) => _properties.RemoveWhere(p => p.Key == key && p.Value == value) > 0;
+        public bool RemoveProperty(string key, string value) => Properties.RemoveWhere(p => p.Key == key && p.Value == value) > 0;
 
-        public int RemoveProperties(string key) => _properties.RemoveWhere(p => p.Key == key);
+        public int RemoveProperties(string key) => Properties.RemoveWhere(p => p.Key == key);
 
-        public bool HasProperty(string key, string value) => _properties.Any(p => p.Key == key && p.Value == value);
+        public bool HasProperty(string key, string value) => Properties.Any(p => p.Key == key && p.Value == value);
 
-        public IEnumerable<string> GetPropertyValues(string key) => _properties.Where(p => p.Key == key).Select(p => p.Value);
+        public IEnumerable<string> GetPropertyValues(string key) => Properties.Where(p => p.Key == key).Select(p => p.Value);
 
         public override bool Equals(object obj) => obj is Subject subject ? Identifier == subject.Identifier : false;
 
